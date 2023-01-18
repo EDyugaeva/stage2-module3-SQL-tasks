@@ -1,3 +1,2 @@
 
-delete from MARK
-where MARK < 7;
+delete from MARK where MARK < 7;
