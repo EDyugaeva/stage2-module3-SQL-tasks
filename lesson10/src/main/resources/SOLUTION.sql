@@ -2,4 +2,4 @@ select (SUBJECT.ID, SUBJECT.Name, SUBJECT.DESCRIPTION, SUBJECT.GRADE)
 from SUBJECT
          inner join MARK
 group by SUBJECT.ID, SUBJECT.Name, SUBJECT.DESCRIPTION, SUBJECT.GRADE
-having avg(MARK) > ;
+having avg(MARK) >8 ;
