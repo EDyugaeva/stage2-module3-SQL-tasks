@@ -1,3 +1,3 @@
-select (STUDENT_ID) from MARK  group by STUDENT_ID having avg(MARK) > 8;
-select distinct (STUDENT.ID, STUDENT.Name) from (MARK inner join STUDENT) group by STUDENT.NAME, STUDENT_ID having min(MARK) >7;
-select distinct (STUDENT.ID, STUDENT.Name) from (PAYMENT inner join STUDENT) where PAYMENT_DATE between '2019-01-01' and '2019-12-31'   group by STUDENT.NAME, STUDENT_ID having count(AMOUNT) >2 ;
+select (s.id , s.name, s.groupnumber, s.birthday) from student s inner join MARK on s.id = mark.student_id group by s.groupnumber, s.name, s.id, s.birthday  having avg(MARK) > 8;
+select distinct (s.id , s.name) from (MARK inner join STUDENT s on mark.student_id = s.id)  group by s.NAME, s.id having min(MARK) >7;
+select distinct (STUDENT.ID, STUDENT.Name) from (PAYMENT inner join STUDENT on payment.student_id = student.id) where PAYMENT_DATE between '2019-01-01' and '2019-12-31'   group by STUDENT.NAME, STUDENT.ID having count(AMOUNT) >2 ;
