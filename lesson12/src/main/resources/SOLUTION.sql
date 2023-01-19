@@ -1,4 +1,4 @@
-delete from MARK where MARK = 3;
+delete from MARK where MARK >= 4;
 
 delete from MARK where MARK < 4;
 
