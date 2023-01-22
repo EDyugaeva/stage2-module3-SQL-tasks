@@ -1,3 +1,3 @@
-select (s.name, s.id) from student s join MARK on s.id = MARK.student_id group by s.name, s.id  having avg(MARK) > 8;
-select  (s.name, s.id) from (MARK join STUDENT s on MARK.student_id = s.id)  group by s.name, s.id having min(MARK) >7;
-select  (s.name, s.id) from (PAYMENT join STUDENT s on PAYMENT.student_id = s.id) where PAYMENT_DATE between '2019-01-01' and '2019-12-31' group by s.name, s.id having count(AMOUNT) >2 ;
+select s.name, s.id from student s join MARK on s.id = MARK.student_id group by s.name, s.id  having avg(MARK.MARK) > 8;
+select  s.name, s.id from MARK join STUDENT s on MARK.student_id = s.id  group by s.name, s.id having min(MARK) >7;
+select  s.name, s.id from PAYMENT join STUDENT s on PAYMENT.student_id = s.id where PAYMENT_DATE between '2019-01-01' and '2019-12-31' group by s.name, s.id having count(AMOUNT) >2 ;
